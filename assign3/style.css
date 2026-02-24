@@ -1,0 +1,120 @@
+/* ── Reset ── */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ── Page Background ── */
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #7B72C8;
+}
+
+/* ── Calculator Card ── */
+.calculator {
+  background-color: #2B2838;
+  border-radius: 28px;
+  padding: 22px 18px 28px 18px;
+  width: 248px;
+  box-shadow:
+    0 28px 70px rgba(0, 0, 0, 0.5),
+    0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* ── Display ── */
+.display {
+  min-height: 76px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 4px 4px 0 4px;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.display span {
+  color: #ffffff;
+  font-size: 36px;
+  font-weight: 300;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  word-break: break-all;
+  text-align: right;
+  line-height: 1.2;
+}
+
+/* ── Button Grid ── */
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+/* ── Base Button ── */
+button {
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 400;
+  color: #e0e0e0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  transition: filter 0.1s ease, transform 0.1s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+  letter-spacing: 0;
+}
+
+button:hover  { filter: brightness(1.2); }
+button:active { filter: brightness(1.4); transform: scale(0.92); }
+
+/* ── Numbers + CE + 0: dark charcoal ── */
+button.num {
+  background-color: #3D3A50;
+  color: #d8d8d8;
+  font-size: 15px;
+}
+
+/* ── × and = : vivid bright purple ── */
+button.op-vivid {
+  background-color: #7B5EC7;
+  color: #ffffff;
+}
+
+/* ── − and + : deepest darkest purple ── */
+button.op-deep {
+  background-color: #3D2F6B;
+  color: #ffffff;
+}
+
+/* ── ÷ : medium purple (between vivid and deep) ── */
+button.op-medium {
+  background-color: #533E8F;
+  color: #ffffff;
+}
+
+/* ── Responsive ── */
+@media (max-width: 400px) {
+  .calculator {
+    width: 88vw;
+    border-radius: 22px;
+    padding: 16px 12px 22px 12px;
+  }
+  .display span {
+    font-size: 28px;
+  }
+  .buttons {
+    gap: 7px;
+  }
+  button {
+    font-size: 13px;
+  }
+}
